@@ -4,8 +4,11 @@
   padding: 0;
 }
 .gridContainer{
-  max-width: 900px;
+  width: 900px;
+  height: 900px;
   display: grid;
-  grid-template-columns: 2rem;
-  grid-template-rows: 2rem;
+  background-color: azure;
+}
+.cell{
+  border: 1px solid black;
 }
