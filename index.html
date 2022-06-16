@@ -11,8 +11,10 @@
   <body>
     <h1>Etch-a-Sketch</h1>
     <div class="left-controls">
-      <button>Press to Change Grid Size!</button>
-      <button>Clear</button>
+      <button id ="sizeButton">Press to Change Grid Size!</button>
+      <label for="color">Pick a color here!</label>
+      <input type="color" id="color" name="color" value="#000000" />
+      <button id="clear">Clear</button>
     </div>
     <div class="gridContainer"></div>
   </body>
