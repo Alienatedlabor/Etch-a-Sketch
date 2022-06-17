@@ -15,7 +15,7 @@ function createGridCells(gridSize) {
     gridContainer.appendChild(cell);
   }
 }
-// color pick function
+// coloring & color pick function  PICK DOESNT WORK !!!!!!!
 function chooseColor() {
   const colorChoice = document.getElementById("color").value;
   gridContainer.addEventListener(
@@ -23,18 +23,20 @@ function chooseColor() {
     (e) => (e.target.style.backgroundColor = `${colorChoice}`)
   );
 }
-//grid size change function
-function changeSize(){
- const sizeButton = document.querySelector("#sizeButton");
-sizeButton.addEventListener("click", createGridCells);
+//grid size change function (also resets grid)       WEIRD COLORED DIVS AT BOTTOM EVEN AFTER RESET!!!!!!!! 
+function changeSize() {
+  const sizeButton = document.querySelector("#sizeButton");
+  sizeButton.addEventListener("click", createGridCells);
+  sizeButton.addEventListener("click",resetGrid);
 }
 //grid reset button
-//these don't work:       !!!!!!!!
 const clearButton = document.querySelector("#clear");
-  clearButton.addEventListener("click", resetGrid);
+clearButton.addEventListener("click", resetGrid);
 //grid reset function
-function resetGrid(){
-  gridContainer.style.backgroundColor = "#f0ffff";
+function resetGrid() {
+  gridContainer.childNodes.forEach(
+    (child) => (child.style.backgroundColor = "#f0ffff")
+  );
 }
 // calling functions
 createGridCells();
