@@ -19,44 +19,60 @@ function createGridCells(gridSize) {
   }
 }
 
-// coloring & color pick function  PICK DOESNT WORK !!!!!!!-  need to use onInput to update but can't quite figure it out
+// coloring & color pick function
 function chooseColor() {
-  const colorChoice = document.getElementById("color").value;
+  const colorChoice = document.getElementById("color");
+  console.log(colorChoice);
+  colorChoice.addEventListener("input", chooseColor);
   gridContainer.addEventListener(
     "mouseover",
-    (e) => (e.target.style.backgroundColor = `${colorChoice}`)
+    (e) => (e.target.style.backgroundColor = `${colorChoice.value}`)
   );
 }
+function getRandomNumber() {
+  let rVal = Math.floor(Math.random() * 255);
+  let gVal = Math.floor(Math.random() * 255);
+  let bVal = Math.floor(Math.random() * 255);
+  let rgb =`rgb(${rVal},${gVal},${bVal})`;
+  console.log(rgb);
+  return rgb;
+}
+partyButton = document.querySelector(".party");
+partyButton.addEventListener("click", startParty);
 //party(rainbow color) function       NOT FINISHED !!!!!!!
 function startParty() {
-  partyButton = document.querySelector(".party");
-  partyButton.addEventListener("click", startParty);
-  //need a random number for either hsl or rgb values
-  function getRandomNumber(){
-  //  Math.floor(math.random()* somethingidkwhat)
-  }
+  rgb = getRandomNumber();
+  gridContainer.addEventListener(
+    "mouseover",
+    (e) => (e.target.style.backgroundColor = getRandomNumber())
+  );
 }
-//grid size change function (also resets grid)       WEIRD COLORED DIVS AT BOTTOM EVEN AFTER RESET!!!!!!!!
+//grid size change function (also resets grid)
 function changeSize() {
   const sizeButton = document.querySelector("#sizeButton");
+  sizeButton.addEventListener("click", resetDivs);
+  sizeButton.addEventListener("click", resetGridColor);
   sizeButton.addEventListener("click", createGridCells);
-  sizeButton.addEventListener("click", resetGrid);
 }
 
 //grid reset button
 const clearButton = document.querySelector("#clear");
-clearButton.addEventListener("click", resetGrid);
+clearButton.addEventListener("click", resetGridColor);
 
-//grid reset function
-function resetGrid() {
+//grid color clear function
+function resetGridColor() {
   gridContainer.childNodes.forEach(
     (child) => (child.style.backgroundColor = "#f0ffff")
   );
+}
+//removes old grid divs
+function resetDivs() {
+  document
+    .querySelectorAll(".cell")
+    .forEach((e) => e.parentNode.removeChild(e));
 }
 
 // calling functions
 createGridCells();
 chooseColor();
 changeSize();
-resetGrid();
-startParty();
