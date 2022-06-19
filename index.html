@@ -10,13 +10,19 @@
   </head>
   <body>
     <h1>Etch-a-Sketch</h1>
-    <div class="left-controls">
-      <button id ="sizeButton">Press to Change Grid Size!</button>
-      <label for="color">Pick a color here!</label>
-      <input type="color" id="color" name="color" value="#000000" />
-      <button class="party">PARTY MODE!</button>
-      <button id="clear">Clear</button>
+    <div class="body-container">
+      <div class="left">
+        <div class="left-controls">
+          <button class="non-party-btn" id="sizeButton">Press to Change Grid Size!</button>
+          <label for="color">Pick a color below!</label>
+          <input type="color" id="color" name="color" value="#000000" />
+          <button class="party">PARTY MODE!</button>
+          <button class="non-party-btn" id="clear">Clear</button>
+        </div>
+      </div>
+      <div class="right">
+        <div class="gridContainer"></div>
+      </div>
     </div>
-    <div class="gridContainer"></div>
   </body>
 </html>

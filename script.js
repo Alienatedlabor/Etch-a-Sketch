@@ -39,7 +39,7 @@ function getRandomNumber() {
 }
 partyButton = document.querySelector(".party");
 partyButton.addEventListener("click", startParty);
-//party(rainbow color) function       NOT FINISHED !!!!!!!
+//party(rainbow color) function
 function startParty() {
   rgb = getRandomNumber();
   gridContainer.addEventListener(
