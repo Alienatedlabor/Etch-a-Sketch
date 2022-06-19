@@ -11,7 +11,7 @@ Users are able to set the grid size, up to 100x100, select their color from an R
 
 <strong>Personal goals for this project:</strong> 
 <ul>
-<li>learn how about CSS grid and combine CSS Grid with flexbox to style the page. </li>
+<li>learn about CSS grid and combine CSS Grid with flexbox to style the page. </li>
 <li>learn more about DOM manipulation and become more comfortable using event listeners. </li>
 </ul>
 
