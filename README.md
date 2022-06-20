@@ -1,4 +1,5 @@
 # Etch-a-Sketch
+https://alienatedlabor.github.io/Etch-a-Sketch/
 Odin Project Etch-a-Sketch: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 
 <strong>An interactive grid in which the user can drag their mouse to color in grid squares. </strong>
